@@ -1,1 +1,1 @@
-# heroPicker
+Hero Picker

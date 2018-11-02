@@ -1,0 +1,670 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>
+            Hero Picker
+        </title>
+    </head>
+
+    <body>
+            
+            <center>
+                
+                <h1 class="title">
+                    Dota 2 Hero Picker
+                </h1>
+                
+                <p id="instructions">
+                    Advantage measures the matchup between two heroes regardless of thir normal win rate. It is calculated by establishing their win 
+                    rates both in and outside of the matchup and comparing the difference against a base win rate. The calculation is 
+                    procedural and advantage/disadvantage results are not designed to be symmetrical.
+
+                    <br />
+                    <br />
+
+                    <button id="startButton" class="startButton" type="button">Begin</button>
+                </p>
+
+                <div id="selects" class="hidden">
+                    <!-- <select id="selectFirstHero">-->
+                    <select id="selectFirstHero">
+                        <option value="none">None</option> 
+                        <option class="strength"value="abbadon">Abaddon</option>
+                        <option class="strength"value="alchemist">Alchemist</option>
+                        <option class="strength"value="axe">Axe</option>
+                        <option class="strength"value="beastmaster">Beastmaster</option>
+                        <option class="strength"value="brewmaster">Brewmaster</option>
+                        <option class="strength"value="bristleback">Bristleback</option>
+                        <option class="strength"value="centaurwarrunner">Centaur Warrunner</option>
+                        <option class="strength"value="chaosknight">Chaos Knight</option>
+                        <option class="strength"value="clockwerk">Clockwerk</option>
+                        <option class="strength"value="doom">Doom</option>
+                        <option class="strength"value="dragonknight">Dragon Knight</option>
+                        <option class="strength"value="earthspirit">Earth Spirit</option>
+                        <option class="strength"value="earthshaker">Earth Shaker</option>
+                        <option class="strength"value="eldertitan">Elder Titan</option>
+                        <option class="strength"value="huskar">Huskar</option>
+                        <option class="strength"value="io">Io</option>
+                        <option class="strength"value="kunka">Kunkka</option>
+                        <option class="strength"value="legioncommander">Legion Commander</option>
+                        <option class="strength"value="lifestealer">Lifestealer</option>
+                        <option class="strength"value="lycan">Lycan</option>
+                        <option class="strength"value="Magnus">Magnus</option>
+                        <option class="strength"value="nightstalker">Night Stalker</option>
+                        <option class="strength"value="omniknight">Omniknight</option>
+                        <option class="strength"value="phoenix">Phoenix</option>
+                        <option class="strength"value="pudge">Pudge</option>
+                        <option class="strength"value="sandking">Sand King</option>
+                        <option class="strength"value="slardar">Slardar</option>
+                        <option class="strength"value="spiritbreaker">Spirit Breaker</option>
+                        <option class="strength"value="sven">Sven</option>
+                        <option class="strength"value="tidehunter">Tidehunter</option>
+                        <option class="strength"value="timbersaw">Timbersaw</option>
+                        <option class="strength"value="tiny">Tiny</option>
+                        <option class="strength"value="treantprotector">Treant Protector</option>
+                        <option class="strength"value="tusk">Tusk</option>
+                        <option class="strength"value="underlord">Underlord</option>
+                        <option class="strength"value="undying">Undying</option>
+                        <option class="strength"value="wraithking">Wraith King</option>
+                        <option class="agility"value="anti-mage">Anti-mage</option>
+                        <option class="agility"value="arcwarden">Arc Warden</option>
+                        <option class="agility"value="bloodseeker">Bloodseeker</option>
+                        <option class="agility"value="bountyhunter">Bounty Hunter</option>
+                        <option class="agility"value="broodmother">Broodmother</option>
+                        <option class="agility"value="clinkz">Clinkz</option>
+                        <option class="agility"value="drowranger">Drow Ranger</option>
+                        <option class="agility"value="emberspirit">Ember Spirit</option>
+                        <option class="agility"value="facelessvoid">Faceless Void</option>
+                        <option class="agility"value="gyrocopter">Gyrocopter</option>
+                        <option class="agility"value="juggernaut">Juggernaut</option>
+                        <option class="agility"value="lonedruid">Lone Druid</option>
+                        <option class="agility"value="luna">Luna</option>
+                        <option class="agility"value="medusa">Medusa</option>
+                        <option class="agility"value="meeps">Meepo</option>
+                        <option class="agility"value="mirana">Mirana</option>
+                        <option class="agility"value="monkeyking">Monkey King</option>
+                        <option class="agility"value="morphing">Morphing</option>
+                        <option class="agility"value="nagasiren">Naga Siren</option>
+                        <option class="agility"value="nyxassassin">bloodseeker</option>
+                        <option class="agility"value="pangolier">Pangolier</option>
+                        <option class="agility"value="phantomassassin">Phantom Assassin</option>
+                        <option class="agility"value="phantomlancer">Phantom Lancer</option>
+                        <option class="agility"value="razor">Razor</option>
+                        <option class="agility"value="riki">Riki</option>
+                        <option class="agility"value="shadowfiend">Shadow Fiend</option>
+                        <option class="agility"value="slark">Slark</option>
+                        <option class="agility"value="sniper">Sniper</option>
+                        <option class="agility"value="spectre">Spectre</option>
+                        <option class="agility"value="templarassassin">Templar Assassin</option>
+                        <option class="agility"value="terrorblade">Terrorblade</option>
+                        <option class="agility"value="trollwarlord">Troll Warlord</option>
+                        <option class="agility"value="ursa">Ursa</option>
+                        <option class="agility"value="vengefulspirit">Vengeful Spirit</option>
+                        <option class="agility"value="venomancer">Venomancer</option>
+                        <option class="agility"value="viper">Viper</option>
+                        <option class="agility"value="weaver">Weaver</option>
+                        <option class="inteligence"value="ancientapparition">Ancient Apparition</option>
+                        <option class="inteligence"value="bane">Bane</option>
+                        <option class="inteligence"value="batrider">Batrider</option>
+                        <option class="inteligence"value="chen">Chen</option>
+                        <option class="inteligence"value="crystalmaiden">Crystal Maiden</option>
+                        <option class="inteligence"value="darkseer">Dark Seer</option>
+                        <option class="inteligence"value="darkwillow">Dark Willow</option>
+                        <option class="inteligence"value="dazzle">Dazzle</option>
+                        <option class="inteligence"value="deathprophet">Death Prophet</option>
+                        <option class="inteligence"value="disruptor">Disruptor</option>
+                        <option class="inteligence"value="enchantress">Enchantress</option>
+                        <option class="inteligence"value="enigma">Enigma</option>
+                        <option class="inteligence"value="grimstroke">Grimstroke</option>
+                        <option class="inteligence"value="invoker">Invoker</option>
+                        <option class="inteligence"value="jakiro">Jaciro</option>
+                        <option class="inteligence"value="Keeperofthelight">Keeper of the Light</option>
+                        <option class="inteligence"value="leshrac">Leshrac</option>
+                        <option class="inteligence"value="lich">Lich</option>
+                        <option class="inteligence"value="lina">Lina</option>
+                        <option class="inteligence"value="lion">Lion</option>
+                        <option class="inteligence"value="naturesprophet">Nature's Prophet</option>
+                        <option class="inteligence"value="necrophos">Necrophos</option>
+                        <option class="inteligence"value="ogremagi">Ogre Magi</option>
+                        <option class="inteligence"value="oracle">Oracle</option>
+                        <option class="inteligence"value="outworlddevourer">Outworld Devourer</option>
+                        <option class="inteligence"value="puck">Puck</option>
+                        <option class="inteligence"value="pugna">Pugna</option>
+                        <option class="inteligence"value="queenofpain">Queen of Pain</option>
+                        <option class="inteligence"value="rubik">Rubik</option>
+                        <option class="inteligence"value="shadowdemon">Shadow Demon</option>
+                        <option class="inteligence"value="shadowshaman">Shadow Shaman</option>
+                        <option class="inteligence"value="silencer">Silencer</option>
+                        <option class="inteligence"value="skywrathmage">Skywrath Mage</option>
+                        <option class="inteligence"value="stormspirit">Storm Spirit</option>
+                        <option class="inteligence"value="techies">Techies</option>
+                        <option class="inteligence"value="tinker">Tinker</option>
+                        <option class="inteligence"value="visage">Visage</option>
+                        <option class="inteligence"value="warlock">Warlock</option>
+                        <option class="inteligence"value="windranger">Windranger</option>
+                        <option class="inteligence"value="winterwyvren">Winter Wyvern</option>
+                        <option class="inteligence"value="witchdoctor">Witch Doctor</option>
+                        <option class="inteligence"value="zeus">Zeus</option>
+                    </select>
+                
+                    <br /> 
+
+                        <p id="firstHeroText"> 
+                            Counters will appear when a hero is selected.
+                        </p>
+                    
+                    <br />
+
+                    <!-- <select id="selectSecondHero">-->
+                    <select id="selectSecondHero">
+                        <option value="none">None</option> 
+                        <option class="strength"value="abbadon">Abaddon</option>
+                        <option class="strength"value="alchemist">Alchemist</option>
+                        <option class="strength"value="axe">Axe</option>
+                        <option class="strength"value="beastmaster">Beastmaster</option>
+                        <option class="strength"value="brewmaster">Brewmaster</option>
+                        <option class="strength"value="bristleback">Bristleback</option>
+                        <option class="strength"value="centaurwarrunner">Centaur Warrunner</option>
+                        <option class="strength"value="chaosknight">Chaos Knight</option>
+                        <option class="strength"value="clockwerk">Clockwerk</option>
+                        <option class="strength"value="doom">Doom</option>
+                        <option class="strength"value="dragonknight">Dragon Knight</option>
+                        <option class="strength"value="earthspirit">Earth Spirit</option>
+                        <option class="strength"value="earthshaker">Earth Shaker</option>
+                        <option class="strength"value="eldertitan">Elder Titan</option>
+                        <option class="strength"value="huskar">Huskar</option>
+                        <option class="strength"value="io">Io</option>
+                        <option class="strength"value="kunka">Kunkka</option>
+                        <option class="strength"value="legioncommander">Legion Commander</option>
+                        <option class="strength"value="lifestealer">Lifestealer</option>
+                        <option class="strength"value="lycan">Lycan</option>
+                        <option class="strength"value="Magnus">Magnus</option>
+                        <option class="strength"value="nightstalker">Night Stalker</option>
+                        <option class="strength"value="omniknight">Omniknight</option>
+                        <option class="strength"value="phoenix">Phoenix</option>
+                        <option class="strength"value="pudge">Pudge</option>
+                        <option class="strength"value="sandking">Sand King</option>
+                        <option class="strength"value="slardar">Slardar</option>
+                        <option class="strength"value="spiritbreaker">Spirit Breaker</option>
+                        <option class="strength"value="sven">Sven</option>
+                        <option class="strength"value="tidehunter">Tidehunter</option>
+                        <option class="strength"value="timbersaw">Timbersaw</option>
+                        <option class="strength"value="tiny">Tiny</option>
+                        <option class="strength"value="treantprotector">Treant Protector</option>
+                        <option class="strength"value="tusk">Tusk</option>
+                        <option class="strength"value="underlord">Underlord</option>
+                        <option class="strength"value="undying">Undying</option>
+                        <option class="strength"value="wraithking">Wraith King</option>
+                        <option class="agility"value="anti-mage">Anti-mage</option>
+                        <option class="agility"value="arcwarden">Arc Warden</option>
+                        <option class="agility"value="bloodseeker">Bloodseeker</option>
+                        <option class="agility"value="bountyhunter">Bounty Hunter</option>
+                        <option class="agility"value="broodmother">Broodmother</option>
+                        <option class="agility"value="clinkz">Clinkz</option>
+                        <option class="agility"value="drowranger">Drow Ranger</option>
+                        <option class="agility"value="emberspirit">Ember Spirit</option>
+                        <option class="agility"value="facelessvoid">Faceless Void</option>
+                        <option class="agility"value="gyrocopter">Gyrocopter</option>
+                        <option class="agility"value="juggernaut">Juggernaut</option>
+                        <option class="agility"value="lonedruid">Lone Druid</option>
+                        <option class="agility"value="luna">Luna</option>
+                        <option class="agility"value="medusa">Medusa</option>
+                        <option class="agility"value="meeps">Meepo</option>
+                        <option class="agility"value="mirana">Mirana</option>
+                        <option class="agility"value="monkeyking">Monkey King</option>
+                        <option class="agility"value="morphing">Morphing</option>
+                        <option class="agility"value="nagasiren">Naga Siren</option>
+                        <option class="agility"value="nyxassassin">bloodseeker</option>
+                        <option class="agility"value="pangolier">Pangolier</option>
+                        <option class="agility"value="phantomassassin">Phantom Assassin</option>
+                        <option class="agility"value="phantomlancer">Phantom Lancer</option>
+                        <option class="agility"value="razor">Razor</option>
+                        <option class="agility"value="riki">Riki</option>
+                        <option class="agility"value="shadowfiend">Shadow Fiend</option>
+                        <option class="agility"value="slark">Slark</option>
+                        <option class="agility"value="sniper">Sniper</option>
+                        <option class="agility"value="spectre">Spectre</option>
+                        <option class="agility"value="templarassassin">Templar Assassin</option>
+                        <option class="agility"value="terrorblade">Terrorblade</option>
+                        <option class="agility"value="trollwarlord">Troll Warlord</option>
+                        <option class="agility"value="ursa">Ursa</option>
+                        <option class="agility"value="vengefulspirit">Vengeful Spirit</option>
+                        <option class="agility"value="venomancer">Venomancer</option>
+                        <option class="agility"value="viper">Viper</option>
+                        <option class="agility"value="weaver">Weaver</option>
+                        <option class="inteligence"value="ancientapparition">Ancient Apparition</option>
+                        <option class="inteligence"value="bane">Bane</option>
+                        <option class="inteligence"value="batrider">Batrider</option>
+                        <option class="inteligence"value="chen">Chen</option>
+                        <option class="inteligence"value="crystalmaiden">Crystal Maiden</option>
+                        <option class="inteligence"value="darkseer">Dark Seer</option>
+                        <option class="inteligence"value="darkwillow">Dark Willow</option>
+                        <option class="inteligence"value="dazzle">Dazzle</option>
+                        <option class="inteligence"value="deathprophet">Death Prophet</option>
+                        <option class="inteligence"value="disruptor">Disruptor</option>
+                        <option class="inteligence"value="enchantress">Enchantress</option>
+                        <option class="inteligence"value="enigma">Enigma</option>
+                        <option class="inteligence"value="grimstroke">Grimstroke</option>
+                        <option class="inteligence"value="invoker">Invoker</option>
+                        <option class="inteligence"value="jakiro">Jaciro</option>
+                        <option class="inteligence"value="Keeperofthelight">Keeper of the Light</option>
+                        <option class="inteligence"value="leshrac">Leshrac</option>
+                        <option class="inteligence"value="lich">Lich</option>
+                        <option class="inteligence"value="lina">Lina</option>
+                        <option class="inteligence"value="lion">Lion</option>
+                        <option class="inteligence"value="naturesprophet">Nature's Prophet</option>
+                        <option class="inteligence"value="necrophos">Necrophos</option>
+                        <option class="inteligence"value="ogremagi">Ogre Magi</option>
+                        <option class="inteligence"value="oracle">Oracle</option>
+                        <option class="inteligence"value="outworlddevourer">Outworld Devourer</option>
+                        <option class="inteligence"value="puck">Puck</option>
+                        <option class="inteligence"value="pugna">Pugna</option>
+                        <option class="inteligence"value="queenofpain">Queen of Pain</option>
+                        <option class="inteligence"value="rubik">Rubik</option>
+                        <option class="inteligence"value="shadowdemon">Shadow Demon</option>
+                        <option class="inteligence"value="shadowshaman">Shadow Shaman</option>
+                        <option class="inteligence"value="silencer">Silencer</option>
+                        <option class="inteligence"value="skywrathmage">Skywrath Mage</option>
+                        <option class="inteligence"value="stormspirit">Storm Spirit</option>
+                        <option class="inteligence"value="techies">Techies</option>
+                        <option class="inteligence"value="tinker">Tinker</option>
+                        <option class="inteligence"value="visage">Visage</option>
+                        <option class="inteligence"value="warlock">Warlock</option>
+                        <option class="inteligence"value="windranger">Windranger</option>
+                        <option class="inteligence"value="winterwyvren">Winter Wyvern</option>
+                        <option class="inteligence"value="witchdoctor">Witch Doctor</option>
+                        <option class="inteligence"value="zeus">Zeus</option>
+                    </select>
+
+                        <br />
+
+                    <p id="secondHeroText"> 
+                        Counters will appear when a hero is selected.
+                    </p>
+                    
+                    <select id="selectThirdHero">
+                        <option value="none">None</option> 
+                        <option class="strength"value="abbadon">Abaddon</option>
+                        <option class="strength"value="alchemist">Alchemist</option>
+                        <option class="strength"value="axe">Axe</option>
+                        <option class="strength"value="beastmaster">Beastmaster</option>
+                        <option class="strength"value="brewmaster">Brewmaster</option>
+                        <option class="strength"value="bristleback">Bristleback</option>
+                        <option class="strength"value="centaurwarrunner">Centaur Warrunner</option>
+                        <option class="strength"value="chaosknight">Chaos Knight</option>
+                        <option class="strength"value="clockwerk">Clockwerk</option>
+                        <option class="strength"value="doom">Doom</option>
+                        <option class="strength"value="dragonknight">Dragon Knight</option>
+                        <option class="strength"value="earthspirit">Earth Spirit</option>
+                        <option class="strength"value="earthshaker">Earth Shaker</option>
+                        <option class="strength"value="eldertitan">Elder Titan</option>
+                        <option class="strength"value="huskar">Huskar</option>
+                        <option class="strength"value="io">Io</option>
+                        <option class="strength"value="kunka">Kunkka</option>
+                        <option class="strength"value="legioncommander">Legion Commander</option>
+                        <option class="strength"value="lifestealer">Lifestealer</option>
+                        <option class="strength"value="lycan">Lycan</option>
+                        <option class="strength"value="Magnus">Magnus</option>
+                        <option class="strength"value="nightstalker">Night Stalker</option>
+                        <option class="strength"value="omniknight">Omniknight</option>
+                        <option class="strength"value="phoenix">Phoenix</option>
+                        <option class="strength"value="pudge">Pudge</option>
+                        <option class="strength"value="sandking">Sand King</option>
+                        <option class="strength"value="slardar">Slardar</option>
+                        <option class="strength"value="spiritbreaker">Spirit Breaker</option>
+                        <option class="strength"value="sven">Sven</option>
+                        <option class="strength"value="tidehunter">Tidehunter</option>
+                        <option class="strength"value="timbersaw">Timbersaw</option>
+                        <option class="strength"value="tiny">Tiny</option>
+                        <option class="strength"value="treantprotector">Treant Protector</option>
+                        <option class="strength"value="tusk">Tusk</option>
+                        <option class="strength"value="underlord">Underlord</option>
+                        <option class="strength"value="undying">Undying</option>
+                        <option class="strength"value="wraithking">Wraith King</option>
+                        <option class="agility"value="anti-mage">Anti-mage</option>
+                        <option class="agility"value="arcwarden">Arc Warden</option>
+                        <option class="agility"value="bloodseeker">Bloodseeker</option>
+                        <option class="agility"value="bountyhunter">Bounty Hunter</option>
+                        <option class="agility"value="broodmother">Broodmother</option>
+                        <option class="agility"value="clinkz">Clinkz</option>
+                        <option class="agility"value="drowranger">Drow Ranger</option>
+                        <option class="agility"value="emberspirit">Ember Spirit</option>
+                        <option class="agility"value="facelessvoid">Faceless Void</option>
+                        <option class="agility"value="gyrocopter">Gyrocopter</option>
+                        <option class="agility"value="juggernaut">Juggernaut</option>
+                        <option class="agility"value="lonedruid">Lone Druid</option>
+                        <option class="agility"value="luna">Luna</option>
+                        <option class="agility"value="medusa">Medusa</option>
+                        <option class="agility"value="meeps">Meepo</option>
+                        <option class="agility"value="mirana">Mirana</option>
+                        <option class="agility"value="monkeyking">Monkey King</option>
+                        <option class="agility"value="morphing">Morphing</option>
+                        <option class="agility"value="nagasiren">Naga Siren</option>
+                        <option class="agility"value="nyxassassin">bloodseeker</option>
+                        <option class="agility"value="pangolier">Pangolier</option>
+                        <option class="agility"value="phantomassassin">Phantom Assassin</option>
+                        <option class="agility"value="phantomlancer">Phantom Lancer</option>
+                        <option class="agility"value="razor">Razor</option>
+                        <option class="agility"value="riki">Riki</option>
+                        <option class="agility"value="shadowfiend">Shadow Fiend</option>
+                        <option class="agility"value="slark">Slark</option>
+                        <option class="agility"value="sniper">Sniper</option>
+                        <option class="agility"value="spectre">Spectre</option>
+                        <option class="agility"value="templarassassin">Templar Assassin</option>
+                        <option class="agility"value="terrorblade">Terrorblade</option>
+                        <option class="agility"value="trollwarlord">Troll Warlord</option>
+                        <option class="agility"value="ursa">Ursa</option>
+                        <option class="agility"value="vengefulspirit">Vengeful Spirit</option>
+                        <option class="agility"value="venomancer">Venomancer</option>
+                        <option class="agility"value="viper">Viper</option>
+                        <option class="agility"value="weaver">Weaver</option>
+                        <option class="inteligence"value="ancientapparition">Ancient Apparition</option>
+                        <option class="inteligence"value="bane">Bane</option>
+                        <option class="inteligence"value="batrider">Batrider</option>
+                        <option class="inteligence"value="chen">Chen</option>
+                        <option class="inteligence"value="crystalmaiden">Crystal Maiden</option>
+                        <option class="inteligence"value="darkseer">Dark Seer</option>
+                        <option class="inteligence"value="darkwillow">Dark Willow</option>
+                        <option class="inteligence"value="dazzle">Dazzle</option>
+                        <option class="inteligence"value="deathprophet">Death Prophet</option>
+                        <option class="inteligence"value="disruptor">Disruptor</option>
+                        <option class="inteligence"value="enchantress">Enchantress</option>
+                        <option class="inteligence"value="enigma">Enigma</option>
+                        <option class="inteligence"value="grimstroke">Grimstroke</option>
+                        <option class="inteligence"value="invoker">Invoker</option>
+                        <option class="inteligence"value="jakiro">Jaciro</option>
+                        <option class="inteligence"value="Keeperofthelight">Keeper of the Light</option>
+                        <option class="inteligence"value="leshrac">Leshrac</option>
+                        <option class="inteligence"value="lich">Lich</option>
+                        <option class="inteligence"value="lina">Lina</option>
+                        <option class="inteligence"value="lion">Lion</option>
+                        <option class="inteligence"value="naturesprophet">Nature's Prophet</option>
+                        <option class="inteligence"value="necrophos">Necrophos</option>
+                        <option class="inteligence"value="ogremagi">Ogre Magi</option>
+                        <option class="inteligence"value="oracle">Oracle</option>
+                        <option class="inteligence"value="outworlddevourer">Outworld Devourer</option>
+                        <option class="inteligence"value="puck">Puck</option>
+                        <option class="inteligence"value="pugna">Pugna</option>
+                        <option class="inteligence"value="queenofpain">Queen of Pain</option>
+                        <option class="inteligence"value="rubik">Rubik</option>
+                        <option class="inteligence"value="shadowdemon">Shadow Demon</option>
+                        <option class="inteligence"value="shadowshaman">Shadow Shaman</option>
+                        <option class="inteligence"value="silencer">Silencer</option>
+                        <option class="inteligence"value="skywrathmage">Skywrath Mage</option>
+                        <option class="inteligence"value="stormspirit">Storm Spirit</option>
+                        <option class="inteligence"value="techies">Techies</option>
+                        <option class="inteligence"value="tinker">Tinker</option>
+                        <option class="inteligence"value="visage">Visage</option>
+                        <option class="inteligence"value="warlock">Warlock</option>
+                        <option class="inteligence"value="windranger">Windranger</option>
+                        <option class="inteligence"value="winterwyvren">Winter Wyvern</option>
+                        <option class="inteligence"value="witchdoctor">Witch Doctor</option>
+                        <option class="inteligence"value="zeus">Zeus</option>
+                    </select>
+                
+                    <br /> 
+
+                        <p id="thirdHeroText"> 
+                            Counters will appear when a hero is selected.
+                        </p>
+
+                    <br />
+
+                    <select id="selectFourthHero">
+                        <option value="none">None</option> 
+                        <option class="strength"value="abbadon">Abaddon</option>
+                        <option class="strength"value="alchemist">Alchemist</option>
+                        <option class="strength"value="axe">Axe</option>
+                        <option class="strength"value="beastmaster">Beastmaster</option>
+                        <option class="strength"value="brewmaster">Brewmaster</option>
+                        <option class="strength"value="bristleback">Bristleback</option>
+                        <option class="strength"value="centaurwarrunner">Centaur Warrunner</option>
+                        <option class="strength"value="chaosknight">Chaos Knight</option>
+                        <option class="strength"value="clockwerk">Clockwerk</option>
+                        <option class="strength"value="doom">Doom</option>
+                        <option class="strength"value="dragonknight">Dragon Knight</option>
+                        <option class="strength"value="earthspirit">Earth Spirit</option>
+                        <option class="strength"value="earthshaker">Earth Shaker</option>
+                        <option class="strength"value="eldertitan">Elder Titan</option>
+                        <option class="strength"value="huskar">Huskar</option>
+                        <option class="strength"value="io">Io</option>
+                        <option class="strength"value="kunka">Kunkka</option>
+                        <option class="strength"value="legioncommander">Legion Commander</option>
+                        <option class="strength"value="lifestealer">Lifestealer</option>
+                        <option class="strength"value="lycan">Lycan</option>
+                        <option class="strength"value="Magnus">Magnus</option>
+                        <option class="strength"value="nightstalker">Night Stalker</option>
+                        <option class="strength"value="omniknight">Omniknight</option>
+                        <option class="strength"value="phoenix">Phoenix</option>
+                        <option class="strength"value="pudge">Pudge</option>
+                        <option class="strength"value="sandking">Sand King</option>
+                        <option class="strength"value="slardar">Slardar</option>
+                        <option class="strength"value="spiritbreaker">Spirit Breaker</option>
+                        <option class="strength"value="sven">Sven</option>
+                        <option class="strength"value="tidehunter">Tidehunter</option>
+                        <option class="strength"value="timbersaw">Timbersaw</option>
+                        <option class="strength"value="tiny">Tiny</option>
+                        <option class="strength"value="treantprotector">Treant Protector</option>
+                        <option class="strength"value="tusk">Tusk</option>
+                        <option class="strength"value="underlord">Underlord</option>
+                        <option class="strength"value="undying">Undying</option>
+                        <option class="strength"value="wraithking">Wraith King</option>
+                        <option class="agility"value="anti-mage">Anti-mage</option>
+                        <option class="agility"value="arcwarden">Arc Warden</option>
+                        <option class="agility"value="bloodseeker">Bloodseeker</option>
+                        <option class="agility"value="bountyhunter">Bounty Hunter</option>
+                        <option class="agility"value="broodmother">Broodmother</option>
+                        <option class="agility"value="clinkz">Clinkz</option>
+                        <option class="agility"value="drowranger">Drow Ranger</option>
+                        <option class="agility"value="emberspirit">Ember Spirit</option>
+                        <option class="agility"value="facelessvoid">Faceless Void</option>
+                        <option class="agility"value="gyrocopter">Gyrocopter</option>
+                        <option class="agility"value="juggernaut">Juggernaut</option>
+                        <option class="agility"value="lonedruid">Lone Druid</option>
+                        <option class="agility"value="luna">Luna</option>
+                        <option class="agility"value="medusa">Medusa</option>
+                        <option class="agility"value="meeps">Meepo</option>
+                        <option class="agility"value="mirana">Mirana</option>
+                        <option class="agility"value="monkeyking">Monkey King</option>
+                        <option class="agility"value="morphing">Morphing</option>
+                        <option class="agility"value="nagasiren">Naga Siren</option>
+                        <option class="agility"value="nyxassassin">bloodseeker</option>
+                        <option class="agility"value="pangolier">Pangolier</option>
+                        <option class="agility"value="phantomassassin">Phantom Assassin</option>
+                        <option class="agility"value="phantomlancer">Phantom Lancer</option>
+                        <option class="agility"value="razor">Razor</option>
+                        <option class="agility"value="riki">Riki</option>
+                        <option class="agility"value="shadowfiend">Shadow Fiend</option>
+                        <option class="agility"value="slark">Slark</option>
+                        <option class="agility"value="sniper">Sniper</option>
+                        <option class="agility"value="spectre">Spectre</option>
+                        <option class="agility"value="templarassassin">Templar Assassin</option>
+                        <option class="agility"value="terrorblade">Terrorblade</option>
+                        <option class="agility"value="trollwarlord">Troll Warlord</option>
+                        <option class="agility"value="ursa">Ursa</option>
+                        <option class="agility"value="vengefulspirit">Vengeful Spirit</option>
+                        <option class="agility"value="venomancer">Venomancer</option>
+                        <option class="agility"value="viper">Viper</option>
+                        <option class="agility"value="weaver">Weaver</option>
+                        <option class="inteligence"value="ancientapparition">Ancient Apparition</option>
+                        <option class="inteligence"value="bane">Bane</option>
+                        <option class="inteligence"value="batrider">Batrider</option>
+                        <option class="inteligence"value="chen">Chen</option>
+                        <option class="inteligence"value="crystalmaiden">Crystal Maiden</option>
+                        <option class="inteligence"value="darkseer">Dark Seer</option>
+                        <option class="inteligence"value="darkwillow">Dark Willow</option>
+                        <option class="inteligence"value="dazzle">Dazzle</option>
+                        <option class="inteligence"value="deathprophet">Death Prophet</option>
+                        <option class="inteligence"value="disruptor">Disruptor</option>
+                        <option class="inteligence"value="enchantress">Enchantress</option>
+                        <option class="inteligence"value="enigma">Enigma</option>
+                        <option class="inteligence"value="grimstroke">Grimstroke</option>
+                        <option class="inteligence"value="invoker">Invoker</option>
+                        <option class="inteligence"value="jakiro">Jaciro</option>
+                        <option class="inteligence"value="Keeperofthelight">Keeper of the Light</option>
+                        <option class="inteligence"value="leshrac">Leshrac</option>
+                        <option class="inteligence"value="lich">Lich</option>
+                        <option class="inteligence"value="lina">Lina</option>
+                        <option class="inteligence"value="lion">Lion</option>
+                        <option class="inteligence"value="naturesprophet">Nature's Prophet</option>
+                        <option class="inteligence"value="necrophos">Necrophos</option>
+                        <option class="inteligence"value="ogremagi">Ogre Magi</option>
+                        <option class="inteligence"value="oracle">Oracle</option>
+                        <option class="inteligence"value="outworlddevourer">Outworld Devourer</option>
+                        <option class="inteligence"value="puck">Puck</option>
+                        <option class="inteligence"value="pugna">Pugna</option>
+                        <option class="inteligence"value="queenofpain">Queen of Pain</option>
+                        <option class="inteligence"value="rubik">Rubik</option>
+                        <option class="inteligence"value="shadowdemon">Shadow Demon</option>
+                        <option class="inteligence"value="shadowshaman">Shadow Shaman</option>
+                        <option class="inteligence"value="silencer">Silencer</option>
+                        <option class="inteligence"value="skywrathmage">Skywrath Mage</option>
+                        <option class="inteligence"value="stormspirit">Storm Spirit</option>
+                        <option class="inteligence"value="techies">Techies</option>
+                        <option class="inteligence"value="tinker">Tinker</option>
+                        <option class="inteligence"value="visage">Visage</option>
+                        <option class="inteligence"value="warlock">Warlock</option>
+                        <option class="inteligence"value="windranger">Windranger</option>
+                        <option class="inteligence"value="winterwyvren">Winter Wyvern</option>
+                        <option class="inteligence"value="witchdoctor">Witch Doctor</option>
+                        <option class="inteligence"value="zeus">Zeus</option>
+                    </select>
+                
+                    <br /> 
+
+                        <p id="fourthHeroText"> 
+                            Counters will appear when a hero is selected.
+                        </p>
+                    <br />
+
+                    <select id="selectFifthHero">
+                        <option value="none">None</option> 
+                        <option class="strength"value="abbadon">Abaddon</option>
+                        <option class="strength"value="alchemist">Alchemist</option>
+                        <option class="strength"value="axe">Axe</option>
+                        <option class="strength"value="beastmaster">Beastmaster</option>
+                        <option class="strength"value="brewmaster">Brewmaster</option>
+                        <option class="strength"value="bristleback">Bristleback</option>
+                        <option class="strength"value="centaurwarrunner">Centaur Warrunner</option>
+                        <option class="strength"value="chaosknight">Chaos Knight</option>
+                        <option class="strength"value="clockwerk">Clockwerk</option>
+                        <option class="strength"value="doom">Doom</option>
+                        <option class="strength"value="dragonknight">Dragon Knight</option>
+                        <option class="strength"value="earthspirit">Earth Spirit</option>
+                        <option class="strength"value="earthshaker">Earth Shaker</option>
+                        <option class="strength"value="eldertitan">Elder Titan</option>
+                        <option class="strength"value="huskar">Huskar</option>
+                        <option class="strength"value="io">Io</option>
+                        <option class="strength"value="kunka">Kunkka</option>
+                        <option class="strength"value="legioncommander">Legion Commander</option>
+                        <option class="strength"value="lifestealer">Lifestealer</option>
+                        <option class="strength"value="lycan">Lycan</option>
+                        <option class="strength"value="Magnus">Magnus</option>
+                        <option class="strength"value="nightstalker">Night Stalker</option>
+                        <option class="strength"value="omniknight">Omniknight</option>
+                        <option class="strength"value="phoenix">Phoenix</option>
+                        <option class="strength"value="pudge">Pudge</option>
+                        <option class="strength"value="sandking">Sand King</option>
+                        <option class="strength"value="slardar">Slardar</option>
+                        <option class="strength"value="spiritbreaker">Spirit Breaker</option>
+                        <option class="strength"value="sven">Sven</option>
+                        <option class="strength"value="tidehunter">Tidehunter</option>
+                        <option class="strength"value="timbersaw">Timbersaw</option>
+                        <option class="strength"value="tiny">Tiny</option>
+                        <option class="strength"value="treantprotector">Treant Protector</option>
+                        <option class="strength"value="tusk">Tusk</option>
+                        <option class="strength"value="underlord">Underlord</option>
+                        <option class="strength"value="undying">Undying</option>
+                        <option class="strength"value="wraithking">Wraith King</option>
+                        <option class="agility"value="anti-mage">Anti-mage</option>
+                        <option class="agility"value="arcwarden">Arc Warden</option>
+                        <option class="agility"value="bloodseeker">Bloodseeker</option>
+                        <option class="agility"value="bountyhunter">Bounty Hunter</option>
+                        <option class="agility"value="broodmother">Broodmother</option>
+                        <option class="agility"value="clinkz">Clinkz</option>
+                        <option class="agility"value="drowranger">Drow Ranger</option>
+                        <option class="agility"value="emberspirit">Ember Spirit</option>
+                        <option class="agility"value="facelessvoid">Faceless Void</option>
+                        <option class="agility"value="gyrocopter">Gyrocopter</option>
+                        <option class="agility"value="juggernaut">Juggernaut</option>
+                        <option class="agility"value="lonedruid">Lone Druid</option>
+                        <option class="agility"value="luna">Luna</option>
+                        <option class="agility"value="medusa">Medusa</option>
+                        <option class="agility"value="meeps">Meepo</option>
+                        <option class="agility"value="mirana">Mirana</option>
+                        <option class="agility"value="monkeyking">Monkey King</option>
+                        <option class="agility"value="morphing">Morphing</option>
+                        <option class="agility"value="nagasiren">Naga Siren</option>
+                        <option class="agility"value="nyxassassin">bloodseeker</option>
+                        <option class="agility"value="pangolier">Pangolier</option>
+                        <option class="agility"value="phantomassassin">Phantom Assassin</option>
+                        <option class="agility"value="phantomlancer">Phantom Lancer</option>
+                        <option class="agility"value="razor">Razor</option>
+                        <option class="agility"value="riki">Riki</option>
+                        <option class="agility"value="shadowfiend">Shadow Fiend</option>
+                        <option class="agility"value="slark">Slark</option>
+                        <option class="agility"value="sniper">Sniper</option>
+                        <option class="agility"value="spectre">Spectre</option>
+                        <option class="agility"value="templarassassin">Templar Assassin</option>
+                        <option class="agility"value="terrorblade">Terrorblade</option>
+                        <option class="agility"value="trollwarlord">Troll Warlord</option>
+                        <option class="agility"value="ursa">Ursa</option>
+                        <option class="agility"value="vengefulspirit">Vengeful Spirit</option>
+                        <option class="agility"value="venomancer">Venomancer</option>
+                        <option class="agility"value="viper">Viper</option>
+                        <option class="agility"value="weaver">Weaver</option>
+                        <option class="inteligence"value="ancientapparition">Ancient Apparition</option>
+                        <option class="inteligence"value="bane">Bane</option>
+                        <option class="inteligence"value="batrider">Batrider</option>
+                        <option class="inteligence"value="chen">Chen</option>
+                        <option class="inteligence"value="crystalmaiden">Crystal Maiden</option>
+                        <option class="inteligence"value="darkseer">Dark Seer</option>
+                        <option class="inteligence"value="darkwillow">Dark Willow</option>
+                        <option class="inteligence"value="dazzle">Dazzle</option>
+                        <option class="inteligence"value="deathprophet">Death Prophet</option>
+                        <option class="inteligence"value="disruptor">Disruptor</option>
+                        <option class="inteligence"value="enchantress">Enchantress</option>
+                        <option class="inteligence"value="enigma">Enigma</option>
+                        <option class="inteligence"value="grimstroke">Grimstroke</option>
+                        <option class="inteligence"value="invoker">Invoker</option>
+                        <option class="inteligence"value="jakiro">Jaciro</option>
+                        <option class="inteligence"value="Keeperofthelight">Keeper of the Light</option>
+                        <option class="inteligence"value="leshrac">Leshrac</option>
+                        <option class="inteligence"value="lich">Lich</option>
+                        <option class="inteligence"value="lina">Lina</option>
+                        <option class="inteligence"value="lion">Lion</option>
+                        <option class="inteligence"value="naturesprophet">Nature's Prophet</option>
+                        <option class="inteligence"value="necrophos">Necrophos</option>
+                        <option class="inteligence"value="ogremagi">Ogre Magi</option>
+                        <option class="inteligence"value="oracle">Oracle</option>
+                        <option class="inteligence"value="outworlddevourer">Outworld Devourer</option>
+                        <option class="inteligence"value="puck">Puck</option>
+                        <option class="inteligence"value="pugna">Pugna</option>
+                        <option class="inteligence"value="queenofpain">Queen of Pain</option>
+                        <option class="inteligence"value="rubik">Rubik</option>
+                        <option class="inteligence"value="shadowdemon">Shadow Demon</option>
+                        <option class="inteligence"value="shadowshaman">Shadow Shaman</option>
+                        <option class="inteligence"value="silencer">Silencer</option>
+                        <option class="inteligence"value="skywrathmage">Skywrath Mage</option>
+                        <option class="inteligence"value="stormspirit">Storm Spirit</option>
+                        <option class="inteligence"value="techies">Techies</option>
+                        <option class="inteligence"value="tinker">Tinker</option>
+                        <option class="inteligence"value="visage">Visage</option>
+                        <option class="inteligence"value="warlock">Warlock</option>
+                        <option class="inteligence"value="windranger">Windranger</option>
+                        <option class="inteligence"value="winterwyvren">Winter Wyvern</option>
+                        <option class="inteligence"value="witchdoctor">Witch Doctor</option>
+                        <option class="inteligence"value="zeus">Zeus</option>
+                    </select>
+                
+                    <br /> 
+
+                        <p id="fifthHeroText"> 
+                            Counters will appear when a hero is selected.
+                        </p>
+
+                </div> 
+            </center>
+        <script src="index.js"></script> 
+    </body>
+</html>
